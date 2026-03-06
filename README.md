@@ -5,7 +5,7 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-D97757?style=flat-square" alt="License: MIT"></a>
   <a href="https://ghostty.org"><img src="https://img.shields.io/badge/terminal-Ghostty-E8DDD3?style=flat-square" alt="Ghostty"></a>
-  <a href="https://github.com/steavenpm/ghostty-claude-theme/pulls"><img src="https://img.shields.io/badge/PRs-welcome-98C379?style=flat-square" alt="PRs Welcome"></a>
+  <a href="https://github.com/steavenpm/ghostty-claude-theme/pulls"><img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=98C379&style=flat-square" alt="PRs Welcome"></a>
 </p>
 
 <br>
