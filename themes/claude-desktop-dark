@@ -1,0 +1,33 @@
+# Claude Desktop Dark — Ghostty Theme
+# Inspired by the Claude AI desktop app (claude.ai) dark mode interface
+# Warm dark brown background with cream text and terracotta accents
+#
+# Repository: https://github.com/steavenpm/ghostty-claude-theme
+# License: MIT
+
+background = #2B2523
+foreground = #E8DDD3
+cursor-color = #D97757
+cursor-text = #2B2523
+selection-background = #4A3F3A
+selection-foreground = #E8DDD3
+
+# Normal colors (0-7)
+palette = 0=#2B2523
+palette = 1=#E06C75
+palette = 2=#98C379
+palette = 3=#D97757
+palette = 4=#7AADCF
+palette = 5=#C678DD
+palette = 6=#56B6C2
+palette = 7=#E8DDD3
+
+# Bright colors (8-15)
+palette = 8=#4A3F3A
+palette = 9=#FF8A80
+palette = 10=#A8D98A
+palette = 11=#FFB38A
+palette = 12=#8AC0E0
+palette = 13=#D89AEF
+palette = 14=#6CC8D4
+palette = 15=#F5EDE6

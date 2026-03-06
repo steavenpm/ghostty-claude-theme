@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="760" height="460">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Outer background (simulates desktop behind slightly-transparent window) -->
+  <rect width="760" height="460" rx="10" fill="#1C1816"/>
+
+  <!-- Terminal window (0.97 opacity = barely transparent) -->
+  <rect width="760" height="460" rx="10" fill="#2B2523" opacity="0.97"/>
+
+  <!-- Titlebar (macos-titlebar-style = tabs) -->
+  <rect width="760" height="36" rx="10" fill="#1E1B19"/>
+  <rect y="26" width="760" height="10" fill="#1E1B19"/>
+
+  <!-- Traffic lights -->
+  <circle cx="18" cy="18" r="5.5" fill="#FF5F56"/>
+  <circle cx="36" cy="18" r="5.5" fill="#FFBD2E"/>
+  <circle cx="54" cy="18" r="5.5" fill="#27C93F"/>
+
+  <!-- Tab label (macos-titlebar-style = tabs shows tab name in titlebar) -->
+  <rect x="72" y="5" width="180" height="26" rx="5" fill="#2B2523" opacity="0.5"/>
+  <text x="162" y="22" font-family="'Menlo', 'Monaco', 'Courier New', monospace" font-size="11" fill="#E8DDD3" text-anchor="middle" opacity="0.8">claude-desktop-dark</text>
+
+  <!-- Terminal content -->
+  <!-- window-padding-x=12, window-padding-y=12 from titlebar bottom (36px) -->
+  <!-- adjust-cell-height=3 means ~22px line height at font-size ~13 -->
+  <!-- font-thicken=true simulated with slightly heavier weight -->
+  <g transform="translate(12, 50)" font-family="'Menlo', 'Monaco', 'Courier New', monospace" font-size="13">
+
+    <!-- Prompt 1 -->
+    <text y="14">
+      <tspan fill="#98C379" font-weight="bold">~/projects/my-app</tspan>
+      <tspan fill="#9A8E84"> on </tspan>
+      <tspan fill="#C678DD">main</tspan>
+    </text>
+    <text y="36">
+      <tspan fill="#D97757" font-weight="bold">&#10095;</tspan>
+      <tspan fill="#E8DDD3"> git log --oneline -4</tspan>
+    </text>
+
+    <!-- Git log output -->
+    <text y="64">
+      <tspan fill="#D97757">a3f8c21</tspan>
+      <tspan fill="#E8DDD3"> feat: add dark mode toggle</tspan>
+    </text>
+    <text y="86">
+      <tspan fill="#D97757">b7e2d09</tspan>
+      <tspan fill="#E8DDD3"> fix: correct padding on mobile</tspan>
+    </text>
+    <text y="108">
+      <tspan fill="#D97757">c1a4f33</tspan>
+      <tspan fill="#E8DDD3"> refactor: extract auth module</tspan>
+    </text>
+    <text y="130">
+      <tspan fill="#D97757">d9b0e77</tspan>
+      <tspan fill="#E8DDD3"> docs: update API reference</tspan>
+    </text>
+
+    <!-- Prompt 2 -->
+    <text y="168">
+      <tspan fill="#98C379" font-weight="bold">~/projects/my-app</tspan>
+      <tspan fill="#9A8E84"> on </tspan>
+      <tspan fill="#C678DD">main</tspan>
+    </text>
+    <text y="190">
+      <tspan fill="#D97757" font-weight="bold">&#10095;</tspan>
+      <tspan fill="#E8DDD3"> cat src/theme.ts</tspan>
+    </text>
+
+    <!-- TypeScript code -->
+    <text y="218">
+      <tspan fill="#C678DD">import</tspan>
+      <tspan fill="#E8DDD3"> { </tspan>
+      <tspan fill="#E06C75">Theme</tspan>
+      <tspan fill="#E8DDD3"> } </tspan>
+      <tspan fill="#C678DD">from</tspan>
+      <tspan fill="#E8DDD3"> </tspan>
+      <tspan fill="#56B6C2">"./types"</tspan>
+    </text>
+    <text y="248">
+      <tspan fill="#C678DD">export const</tspan>
+      <tspan fill="#E06C75"> claude</tspan>
+      <tspan fill="#E8DDD3">: </tspan>
+      <tspan fill="#7AADCF">Theme</tspan>
+      <tspan fill="#E8DDD3"> = {</tspan>
+    </text>
+    <text y="270">
+      <tspan fill="#E8DDD3">  name: </tspan>
+      <tspan fill="#56B6C2">"claude-desktop-dark"</tspan>
+      <tspan fill="#E8DDD3">,</tspan>
+    </text>
+    <text y="292">
+      <tspan fill="#E8DDD3">  bg: </tspan>
+      <tspan fill="#56B6C2">"#2B2523"</tspan>
+      <tspan fill="#E8DDD3">,</tspan>
+    </text>
+    <text y="314">
+      <tspan fill="#E8DDD3">  fg: </tspan>
+      <tspan fill="#56B6C2">"#E8DDD3"</tspan>
+      <tspan fill="#E8DDD3">,</tspan>
+    </text>
+    <text y="336">
+      <tspan fill="#E8DDD3">  accent: </tspan>
+      <tspan fill="#56B6C2">"#D97757"</tspan>
+      <tspan fill="#E8DDD3">,</tspan>
+    </text>
+    <text y="358">
+      <tspan fill="#E8DDD3">  contrast: </tspan>
+      <tspan fill="#FFB38A">3</tspan>
+      <tspan fill="#E8DDD3">,</tspan>
+      <tspan fill="#9A8E84"> // WCAG minimum</tspan>
+    </text>
+    <text y="380">
+      <tspan fill="#E8DDD3">}</tspan>
+    </text>
+
+    <!-- Final prompt with block cursor (cursor-style=block) -->
+    <text y="410">
+      <tspan fill="#98C379" font-weight="bold">~/projects/my-app</tspan>
+      <tspan fill="#9A8E84"> on </tspan>
+      <tspan fill="#C678DD">main</tspan>
+    </text>
+    <text y="432">
+      <tspan fill="#D97757" font-weight="bold">&#10095;</tspan>
+    </text>
+
+    <!-- Block cursor: cursor-color=#D97757, full character width -->
+    <rect x="14" y="419" width="10" height="18" fill="#D97757" rx="1"/>
+  </g>
+</svg>

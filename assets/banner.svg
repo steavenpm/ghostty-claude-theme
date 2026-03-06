@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B2523"/>
+      <stop offset="60%" stop-color="#221E1C"/>
+      <stop offset="100%" stop-color="#1A1614"/>
+    </linearGradient>
+    <linearGradient id="accent-bar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97757"/>
+      <stop offset="40%" stop-color="#E06C75"/>
+      <stop offset="70%" stop-color="#C678DD"/>
+      <stop offset="100%" stop-color="#7AADCF"/>
+    </linearGradient>
+    <linearGradient id="ghost-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E08A6A"/>
+      <stop offset="100%" stop-color="#D97757"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#D97757" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#D97757" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ghost-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#D97757" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="220" rx="12" fill="url(#bg)"/>
+
+  <!-- Subtle glow behind ghost area -->
+  <ellipse cx="90" cy="110" rx="120" ry="100" fill="url(#glow)"/>
+
+  <!-- Decorative dots -->
+  <g opacity="0.06">
+    <circle cx="680" cy="40" r="2" fill="#E8DDD3"/>
+    <circle cx="720" cy="55" r="1.5" fill="#E8DDD3"/>
+    <circle cx="750" cy="35" r="1" fill="#E8DDD3"/>
+    <circle cx="800" cy="60" r="2" fill="#E8DDD3"/>
+    <circle cx="830" cy="42" r="1.5" fill="#E8DDD3"/>
+    <circle cx="700" cy="80" r="1" fill="#E8DDD3"/>
+    <circle cx="770" cy="75" r="1.5" fill="#E8DDD3"/>
+    <circle cx="850" cy="80" r="1" fill="#E8DDD3"/>
+    <circle cx="690" cy="100" r="1.5" fill="#E8DDD3"/>
+    <circle cx="820" cy="95" r="2" fill="#E8DDD3"/>
+  </g>
+
+  <!-- Accent bar at top -->
+  <rect x="0" y="0" width="900" height="3" fill="url(#accent-bar)" rx="12"/>
+
+  <!-- Ghost icon -->
+  <g transform="translate(52, 48)" filter="url(#ghost-shadow)">
+    <!-- Ghost body -->
+    <path d="M40,8 C40,3.6 36,0 31,0 L21,0 C9.4,0 0,9.4 0,21 L0,80
+             C0,80 1,86 5,80 C9,74 11,74 15,80
+             C19,86 21,86 25,80 C29,74 31,74 35,80
+             C39,86 41,86 45,80 C49,74 51,74 55,80
+             C59,86 60,80 60,80 L60,21 C60,9.4 53,2 42,2 Z"
+          fill="url(#ghost-body)" opacity="0.95"/>
+    <!-- Cheek blush -->
+    <ellipse cx="10" cy="38" rx="6" ry="3.5" fill="#E06C75" opacity="0.25"/>
+    <ellipse cx="50" cy="38" rx="6" ry="3.5" fill="#E06C75" opacity="0.25"/>
+    <!-- Eyes -->
+    <ellipse cx="18" cy="30" rx="6" ry="7" fill="#2B2523"/>
+    <ellipse cx="42" cy="30" rx="6" ry="7" fill="#2B2523"/>
+    <!-- Eye highlights -->
+    <circle cx="20" cy="28" r="2.5" fill="#F5EDE6"/>
+    <circle cx="44" cy="28" r="2.5" fill="#F5EDE6"/>
+    <circle cx="16" cy="32" r="1.2" fill="#F5EDE6" opacity="0.5"/>
+    <circle cx="40" cy="32" r="1.2" fill="#F5EDE6" opacity="0.5"/>
+    <!-- Smile -->
+    <path d="M24,42 Q30,48 36,42" fill="none" stroke="#2B2523" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Title -->
+  <text x="140" y="100" font-family="'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif" font-size="44" font-weight="700" fill="#E8DDD3" letter-spacing="-1.5">ghostty-claude-theme</text>
+
+  <!-- Subtitle -->
+  <text x="142" y="132" font-family="'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif" font-size="17" fill="#9A8E84" letter-spacing="0.3">Warm dark theme for Ghostty, inspired by Claude</text>
+
+  <!-- Palette dots with subtle spacing -->
+  <g transform="translate(142, 158)">
+    <circle cx="0" cy="0" r="9" fill="#E06C75"/>
+    <circle cx="26" cy="0" r="9" fill="#98C379"/>
+    <circle cx="52" cy="0" r="9" fill="#D97757"/>
+    <circle cx="78" cy="0" r="9" fill="#7AADCF"/>
+    <circle cx="104" cy="0" r="9" fill="#C678DD"/>
+    <circle cx="130" cy="0" r="9" fill="#56B6C2"/>
+    <circle cx="156" cy="0" r="9" fill="#E8DDD3"/>
+  </g>
+
+  <!-- Terminal prompt hint on right side -->
+  <g transform="translate(620, 150)">
+    <rect x="0" y="0" width="240" height="32" rx="6" fill="#1E1B19" stroke="#3A322E" stroke-width="1" opacity="0.8"/>
+    <text x="12" y="21" font-family="'Menlo', 'Monaco', monospace" font-size="12" fill="#D97757">$</text>
+    <text x="26" y="21" font-family="'Menlo', 'Monaco', monospace" font-size="12" fill="#E8DDD3">bash</text>
+    <text x="62" y="21" font-family="'Menlo', 'Monaco', monospace" font-size="12" fill="#9A8E84">&lt;(curl ... install.sh)</text>
+  </g>
+</svg>
