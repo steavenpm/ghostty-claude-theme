@@ -8,6 +8,8 @@ set -euo pipefail
 GHOSTTY_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/ghostty"
 GHOSTTY_THEMES_DIR="$GHOSTTY_CONFIG_DIR/themes"
 GHOSTTY_CONFIG_FILE="$GHOSTTY_CONFIG_DIR/config"
+# macOS also reads config from Application Support — a theme set there overrides ours
+GHOSTTY_MACOS_CONFIG="$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 BACKUP_SUFFIX=".backup.$(date +%Y%m%d%H%M%S)"
 BACKUP_CREATED=false
 
@@ -60,6 +62,22 @@ if ! command -v ghostty &>/dev/null; then
     echo ""
 fi
 
+# ── Handle macOS Application Support config ──
+# Ghostty on macOS reads from both ~/.config/ghostty/config AND
+# ~/Library/Application Support/com.mitchellh.ghostty/config.
+# A theme= line in the latter overrides the former, so we need to
+# comment it out to prevent conflicts.
+fix_macos_config() {
+    if [[ -f "$GHOSTTY_MACOS_CONFIG" ]] && grep -q "^theme[[:space:]]*=" "$GHOSTTY_MACOS_CONFIG" 2>/dev/null; then
+        warn "Found conflicting theme in macOS Ghostty config:"
+        warn "  $GHOSTTY_MACOS_CONFIG"
+        cp "$GHOSTTY_MACOS_CONFIG" "${GHOSTTY_MACOS_CONFIG}${BACKUP_SUFFIX}"
+        sed -i.tmp 's/^theme[[:space:]]*=.*$/# &  # commented by ghostty-claude-theme installer/' "$GHOSTTY_MACOS_CONFIG"
+        rm -f "${GHOSTTY_MACOS_CONFIG}.tmp"
+        ok "Commented out conflicting theme (backup saved)"
+    fi
+}
+
 # ── Create directories ──
 mkdir -p "$GHOSTTY_THEMES_DIR"
 
@@ -93,6 +111,7 @@ case "$choice" in
         fi
         cp "$SCRIPT_DIR/config/ghostty.conf" "$GHOSTTY_CONFIG_FILE"
         ok "Full config applied"
+        fix_macos_config
         ;;
     2)
         if [[ -f "$GHOSTTY_CONFIG_FILE" ]]; then
@@ -111,6 +130,7 @@ case "$choice" in
             echo "theme = claude-desktop-dark" > "$GHOSTTY_CONFIG_FILE"
             ok "Created config with theme"
         fi
+        fix_macos_config
         ;;
     3)
         ok "Skipped config. Set theme = claude-desktop-dark in your Ghostty config."
