@@ -29,6 +29,7 @@ The script detects which mode by checking if theme files exist at the resolved p
 - **BSD sed/grep** (macOS): never use `\s` — use `[[:space:]]` instead
 - **Process substitution**: `bash <(curl ...)` sets `BASH_SOURCE[0]` to `/dev/fd/XX`, not a real path
 - **Ghostty config keys**: verify against https://ghostty.org/docs/config/reference — invalid keys are silently ignored (e.g. `background-blur-radius` is wrong, `background-blur` is correct)
+- **macOS dual config**: Ghostty reads from BOTH `~/.config/ghostty/config` AND `~/Library/Application Support/com.mitchellh.ghostty/config`. A `theme=` line in the latter overrides the former. The install script must check and handle both locations.
 
 ## Editing the Theme
 
